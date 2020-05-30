@@ -52,7 +52,7 @@ pipeline {
     stage('TF Plan') {
       steps {
         sh '''
-terraform plan
+terraform plan -out deploy
             '''
       }
     }
@@ -69,7 +69,7 @@ terraform plan
     stage('TF Apply') {
       steps {
         sh '''           
-            terraform apply -auto-approve'''
+            terraform apply deploy -auto-approve'''
       }
     }
 
