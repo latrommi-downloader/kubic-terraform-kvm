@@ -70,17 +70,10 @@ terraform plan -out deploy
       steps {
         sh '''           
             terraform apply -auto-approve deploy
-            '''
-      }
-    }
-
-    stage('TF Report') {
-      steps {
-        sh '''                            
             ./mk-ssh-config.sh
             '''
       }
-    }
+    }   
 
   }
   options {
