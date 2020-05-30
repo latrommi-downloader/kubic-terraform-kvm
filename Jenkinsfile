@@ -73,7 +73,7 @@ terraform plan -out deploy
             ./mk-ssh-config.sh
             '''
       }
-    }   
+    }
 
   }
   options {
