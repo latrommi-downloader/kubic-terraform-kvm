@@ -34,8 +34,7 @@ pipeline {
 
     stage('TF Download Images') {
       steps {
-        sh '''               
-                chmod 755 ./download-image.py 
+        sh '''                               
                 ./download-image.py 
                 
                 '''
@@ -53,8 +52,7 @@ pipeline {
     stage('TF Plan') {
       steps {
         sh '''
-chmod 755 /home/john/jenkins/workspace
-terraform plan -out deploy
+terraform plan
             '''
       }
     }
@@ -71,15 +69,14 @@ terraform plan -out deploy
     stage('TF Apply') {
       steps {
         sh '''           
-            terraform apply deploy            
+            terraform apply
             '''
       }
     }
 
     stage('TF Report') {
       steps {
-        sh '''                
-            chmod 755 ./mk-ssh-config.sh     
+        sh '''                            
             ./mk-ssh-config.sh
             '''
       }
