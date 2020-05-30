@@ -69,8 +69,7 @@ terraform plan
     stage('TF Apply') {
       steps {
         sh '''           
-            terraform apply
-            '''
+            terraform apply -auto-approve'''
       }
     }
 
