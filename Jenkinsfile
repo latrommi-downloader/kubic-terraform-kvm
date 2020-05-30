@@ -69,7 +69,8 @@ terraform plan -out deploy
     stage('TF Apply') {
       steps {
         sh '''           
-            terraform apply deploy -auto-approve'''
+            terraform apply deploy -auto-approve
+            '''
       }
     }
 
